@@ -9,10 +9,8 @@ This is a custom Expo template designed for quick project setup with theming, na
 To start a new project using this template, run:
 
 ```sh
-npx create-expo-app my-new-project --template https://github.com/YOUR_USERNAME/my-expo-template
+npx create-expo-app my-new-project --template https://github.com/ricardo-boone/expo-router-themed
 ```
-
-Replace `YOUR_USERNAME` with your actual GitHub username.
 
 ---
 
@@ -50,19 +48,19 @@ expo start --web
 ## 📂 Project Structure
 
 ```
-/my-new-project
- ├── app/                  # Expo Router pages
- │   ├── index.tsx         # Home screen
- │   ├── _layout.tsx       # Root layout (with ThemeProvider)
- │   ├── _root.tsx         # Custom Root Component
- │   ├── +not-found.tsx    # 404 page
- ├── components/           # Reusable UI components
- ├── styles/               # Global styles & theme
- ├── hooks/                # Custom hooks
- ├── assets/               # Images & fonts
- ├── package.json          # Dependencies
- ├── app.config.ts         # Expo config
- ├── tsconfig.json         # TypeScript config
+/expo-router-themed
+ ├── app/                    # Expo Router pages
+ │   ├── index.tsx           # Home screen
+ │   ├── _layout.tsx         # Root layout (with ThemeProvider)
+ ├── assets/                 # Images & fonts
+ ├── components/             # Reusable UI components
+ │   ├── rootStackLayout.tsx # Root layout (using Theme)
+ ├── styles/                 # Global styles & theme
+ │   ├── globalStyles.ts     # Themed Global StyleSheet
+ │   ├── themeProvider.tsx   # Theme Provider
+ ├── app.json                # App Config
+ ├── package.json            # Dependencies
+ ├── tsconfig.json           # TypeScript config
 ```
 
 ---
@@ -95,7 +93,6 @@ const {toggleTheme} = useTheme();
 
 ✅ **Expo Router** for navigation  
 ✅ **Dark/Light Mode** with ThemeProvider  
-✅ **Custom Fonts** (pre-configured)  
 ✅ **Splash Screen Handling** (using expo-splash-screen)  
 ✅ **Pre-installed Dependencies** like React Navigation & Reanimated
 
