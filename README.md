@@ -53,7 +53,6 @@ expo start --web
  │   ├── index.tsx           # Home screen
  │   ├── _layout.tsx         # Root layout (with ThemeProvider)
  ├── assets/                 # Images & fonts
- ├── components/             # Reusable UI components
  ├── styles/                 # Global styles & theme
  │   ├── globalStyles.ts     # Themed Global StyleSheet
  │   ├── themeProvider.tsx   # Theme Provider
