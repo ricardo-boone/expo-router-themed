@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { ThemeProvider, useTheme } from '@/styles/themeProvider';
-import { RootLayout as RootStackLayout } from '@/components/rootStackLayout';
+import { Stack } from "expo-router";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -29,6 +29,21 @@ export default function RootLayout() {
         <ThemeProvider>
             <RootStackLayout />
             <StatusBar style="auto" />
-        </ThemeProvider >
+        </ThemeProvider>
     );
+}
+
+function RootStackLayout() {
+    const { theme } = useTheme();
+
+    return (
+        <Stack
+            screenOptions={{
+                headerTitle: "Home",
+                headerStyle: { backgroundColor: theme.background }, // Apply theme background
+                headerTintColor: theme.text, // Apply theme text color
+            }}>
+            <Stack.Screen name="index" />
+        </Stack>
+    )
 }
